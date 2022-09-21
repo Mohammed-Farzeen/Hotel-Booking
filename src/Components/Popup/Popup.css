@@ -1,0 +1,95 @@
+/* .popup-box{
+     display: flex;
+    justify-content: space-evenly; 
+   
+} */
+
+
+.popup{
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    /* margin: 20px; */
+    width: 50%;
+    box-shadow: 1.5px 1.5px 6px 0px;
+    position: absolute;
+    top: 7%;
+    left: 20%;
+   
+}
+    
+.input_container{
+   
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    /* display: flex;
+    justify-content: center; */
+}
+.component{
+    gap: 10px;
+}
+
+.input-group{
+    position: relative;
+    
+    /* width: 80%; */
+}
+/* .h1pop{
+    color: #0da2ff;
+} */
+
+.input{
+    padding: 10px;
+    border-radius: 2px;
+    outline: none;
+    color: black;
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 2.5px 0px;
+    width: 90%;
+    /* #0da2ff */
+    
+
+}
+.placeholder{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    font-size: 15px;
+    padding: 0px 5px;
+    color: rgb(0, 0, 0);
+    transition: 0.3S;
+    pointer-events: none;
+}
+.input:focus + .placeholder{
+    top:-10px;
+    background-color:white;
+}
+
+.input:not(:placeholder-shown)+ .placeholder{
+    top:-10px;
+    background-color:white;
+}
+.form{
+    /* display: flex;
+    justify-content: center; */
+    padding: 20px;
+    
+}
+.popup-title{
+    padding-left: 20px;
+}
+.form-bottom{
+    padding-top: 5px;
+    display:flex ;
+    gap: 15px;
+}
+.cancle{
+    color: orange;
+    cursor: pointer;
+}
+.new-amenities{
+    text-decoration: none;
+    color: orange;
+    font-size: 15px;
+}

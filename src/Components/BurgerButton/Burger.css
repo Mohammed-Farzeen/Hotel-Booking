@@ -1,0 +1,58 @@
+.admin{
+    display: flex;
+    flex-wrap: wrap;
+}
+.burger-button{
+    
+    backdrop-filter: blur(1px);
+    background-color: aliceblue;
+    padding: 20px;
+    height: 100%;
+    border-radius: 15px;
+    
+    box-shadow: 1.5px 1.5px 6px 0px;
+}
+
+.burger-button div div{
+    margin: 10px;
+    flex-direction: column;
+}
+.burger-page-notactive{
+    color: black;
+    text-decoration: none;
+}
+
+
+.burger-page-active{
+    text-decoration: none;
+    color: orange;
+    border-bottom: 2px solid orange;
+}
+
+.brgrbtn{
+    position: absolute;
+    top: 75px;
+    right: 10px;
+    /* width: 50%; */
+    z-index: 1;
+}
+
+
+.burger-pages{
+
+    text-align: center;
+}
+/* .burger-page-notactive:hover{
+    color: white;
+} */
+
+@media only screen and (max-width: 680px) {
+    .admin{
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .admin{
+        display: flex;
+    }
+}

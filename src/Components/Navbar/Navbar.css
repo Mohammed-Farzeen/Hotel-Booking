@@ -1,0 +1,162 @@
+body{
+background-color: lightgrey;
+position: relative;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+}
+
+
+.nav{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+   
+}
+.head{
+    
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+.heading{
+    text-decoration: none;
+    color: black;
+
+}
+.leftnav{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.rightnav{
+    margin-right: 10px;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.icon{
+    display: flex;
+    height: 20px;
+}
+
+.navboder{
+    border-bottom: 2px solid transparent;
+}
+
+.active_nav{
+    text-decoration: none;
+    color: orange;
+    border-bottom: 2px solid orange;
+}
+.menu{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.link{
+    text-decoration: none;
+}
+.burger{
+    
+    display: none;
+}
+
+@media only screen and (max-width: 680px) {
+
+    .leftnav{
+        gap: 5px;
+    }
+    
+
+    .icon{
+        font-size: 15px;
+        
+    }
+    
+    .menu,.active_nav{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+    .link{
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .admin{
+        display: none;
+    }
+    .logo{
+        height: 60px;
+        width: 60px;
+    }
+
+    .head{
+    
+        font-size: 18px;
+        font-weight: 700;
+    
+    }
+    
+    .menu,.active_nav{
+        display: none;
+    }
+
+    .icon{
+    display: none;
+
+    }
+
+    .burger{
+        display: block;
+    }
+    .link{
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 270px) {
+    .admin{
+        display: block;
+    }
+    
+    .logo{
+        height: 50px;
+        width: 50px;
+    }
+    
+    
+    .head{
+    
+        font-size: 15px;
+        font-weight: 500;
+    
+    }
+    
+    .menu{
+        display: none;
+    }
+
+    .icon{
+    display: none;
+
+    }
+
+    .burger{
+        display: block;
+    }
+    .link{
+        display: none;
+    }
+  }

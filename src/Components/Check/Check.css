@@ -1,0 +1,45 @@
+.title{
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding-bottom : 10px;
+    gap: 8px;
+    font-weight: 700;
+    
+
+}
+
+.box{
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.mainbox{
+    box-shadow: 1px 1px 1.5px 1.5px;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+    width: 80%  ;
+}
+    
+.name{
+    font-weight: 600;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll{
+    height: 200px;
+    overflow-y: scroll;
+
+}
+.checkbtn{
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    padding: 10px;
+}

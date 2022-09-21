@@ -1,0 +1,98 @@
+.booking-bar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    
+    
+}
+.new-booking-main{
+    background-color: white;
+    padding: 20px;
+    margin: 5%;
+    border-radius: 15px;
+    box-shadow: 1.5px 1.5px 6px 0px;
+
+}
+.new-booking{
+    color: orange;
+    text-decoration: none;
+}
+.booking-searchbar{
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.booking-table-top{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    font-weight: bold;
+    color: #0da2ff;
+
+
+}
+/* .check-in-date{
+    color: green;
+
+}
+.check-out-date{
+    color: red;
+
+} */
+.booking-table-data{
+    /* padding: 10px; */
+    
+    justify-items: center;
+}
+.data,.booking-table-top{
+    border: 1px solid lightgrey;
+    padding: 15px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.booking-table-main{
+    height: 380px;
+    overflow-y: scroll;
+}
+.booking-button{
+    background-color: orange;
+    color: white;
+    padding: 8px;
+    border-radius: 7px;
+}
+.new-booking-text{
+    /* padding: 15px; */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* .booking-button{
+    padding: 5px;
+    background-color: orange;
+} */
+
+@media only screen and (max-width: 905px){
+    .data, .booking-table-top {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 590px){
+    .data, .booking-table-top {
+        font-size: 12px;
+    }
+}
+
+
+
+@media only screen and (max-width: 590px){
+    .data, .booking-table-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5px;    }
+}

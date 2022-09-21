@@ -1,0 +1,114 @@
+/* .h1{
+    color: #0da2ff;
+} */
+
+/* .tabletitle{
+    position: sticky;
+    top: 0;
+    background-color: white;
+} */
+/* .table{
+    height: 425px;
+    overflow-y: scroll;
+} */
+
+.popup-title{
+    display: flex;
+    justify-content: space-between;
+}
+.roommain{
+
+    background-color: white;
+    padding: 20px;
+    margin: 25px;
+    border-radius: 15px;
+    box-shadow: 1.5px 1.5px 6px 0px;
+}
+.rno{
+    color: green;
+
+}
+.price{
+    color: red;
+}
+.rmtitle{
+    /* padding: 0px 10px 0px 10px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.rmheading{
+    font-weight: 500;
+    color: #0da2ff
+    ;
+}
+.details,.tabletitle{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 15px;
+    /* border: .5px solid lightgrey ; */
+}
+.details,.tabletitle{
+    border: .5px solid lightgrey;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* .data{
+    height: 425px;
+    overflow-y: scroll;
+
+} */
+
+.popupwindow{
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    top: 0%;
+    left:0%
+}
+.amenities-map{
+    padding: 15px;
+}
+.amenities-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.amenities-add{
+    color: orange;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 680px){
+    .rmheading {
+        font-size: 14px;
+    }
+    .details{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .rmheading {
+        font-size: 12px;
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+    .details,.tabletitle{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        padding: 15px;
+        /* border: .5px solid lightgrey ; */
+    }
+}
