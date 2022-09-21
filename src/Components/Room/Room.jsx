@@ -24,7 +24,7 @@ const Room = ({data}) => {
       <Button text='Add Room' btnclr='orange' color='white' Functionality={popuproom}/></div>
       
       <div className='Rmtble'>
-      <Roomtable data={data}/>
+      <Roomtable data={data} setAddroom={setAddroom}/>
       
       <div className={addroom ? "popupwindow" : ""}>
       

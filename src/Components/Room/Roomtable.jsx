@@ -1,20 +1,34 @@
 import React from 'react'
 import Roomdetails from './Roomdetails'
 
-const Roomtable = ({data}) => {
+const Roomtable = ({data,setAddroom}) => {
   return (
     <div>
         <div className='table'>
-            <div className='tabletitle'>
-            <div className='rmheading' >Room Number</div>
-            <div className='rmheading'>Adult Capacity</div>
-            <div className='rmheading'>Children Capacity</div>
-            <div className='rmheading'>Price</div>
+            {/* <div className='tabletitle'> */}
+            <div className='table-head'>
+
+            <div className='table-title'>
+
+                <div className='rmheading' >Room Number</div>
+                <div className='rmheading'>Adult Capacity</div>
+                <div className='rmheading'>Children Capacity</div>
+                <div className='rmheading'>Price</div>
+            
             </div>
+
+            <div className='table-edit'>
+
+                <div className='rmheading'>Edit</div>
+            
+            </div>
+
+            </div>
+            {/* </div> */}
             <div  >
                 {data.map((data,index)=>{
                     return(
-                        <Roomdetails data={data} key={index}/>
+                        <Roomdetails data={data} key={index} setAddroom={setAddroom} />
                     )
                 })} 
             </div>

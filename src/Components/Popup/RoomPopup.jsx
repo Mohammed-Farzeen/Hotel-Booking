@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Amenities from '../Amenities/Amenities'
 // import AmenitiesContent from '../Amenities/AmenitiesContent'
 import Button from '../Button/Button'
 import InputComponent from './InputComponent'
@@ -15,6 +16,7 @@ const RoomPopup = ({setAddroom}) => {
     const [AdultCapacity, setAdultCapacity] = useState('')
     const [ChildCapacity, setChildCapacity] = useState('')
     const [Price, setPrice] = useState('')
+    const[selectArray,setSelectArray]=useState([])
     // console.log(Amenities);
 
     const sendData = (e)=>{
@@ -38,33 +40,37 @@ const RoomPopup = ({setAddroom}) => {
       <InputComponent text='Children Capacity' type ="number" setState={setChildCapacity} />
       <InputComponent text='Price' type ="number" setState={setPrice} />
       <div className='form-bottom'>
-      <Button text='Save' btnclr='#0da2ff' color='white' />
-      {/* <div> Or </div> */}
+        <Button text='Save' btnclr='#0da2ff' color='white' />
+        {/* <div> Or </div> */}
       </div>
       </form> 
-      <div>
-      <div>
-        <h2>Amenities</h2>
-      </div>
-      {/* <div className='amenities-map'>
-      {Amenities.map((Amenities,index)=>{
-        return(
-        <AmenitiesContent Amenities={Amenities} key={index}/>
-      )})}
-
-
-      </div> */}
-      {/* <div className='amenities-add' onClick={()=>{setAmenities(true)}}>Add Amenities</div>  */}
-      <div className='amenities-bottom'>
-        {/* <InputComponent text='Add Amenities'/><Button text='Add' btnclr='rgb(13, 162, 255)' color='white'  /> */}
-      </div>
-      </div>
       
-      </div>
-      
-     
-    </div>
+      <div><h2>Amenities</h2></div>
 
+      
+      <div>
+            <select className='select-option' name="Amenitied" id="" onChange={(e)=>{setSelectArray([...selectArray,e.target.value])}}>
+              <option value="Select">Select</option>
+              <option value="TV">TV</option>
+              <option value="AC">AC</option>
+              <option value="Cofee Maker">Cofee Maker</option>
+              <option value="Extra Bed">Extra Bed</option>
+              
+              <option value="Internet">Internet</option>
+            </select>
+
+            <div>
+            <div className='select-data'>
+              {selectArray.map((data, index) => {
+              return (
+              <Amenities select={selectArray} data={data} key={index} index={index} setSelect={setSelectArray} />
+          )})}
+            </div>
+        
+            </div> 
+        </div>
+      </div>
+     </div>
     </div>
   )
 }

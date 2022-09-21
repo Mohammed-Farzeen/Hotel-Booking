@@ -1,0 +1,11 @@
+.round-label{
+    display: flex;
+    gap: 10%;
+    /* margin-bottom: 10px; */
+    padding: 10px;
+    color: rgb(13, 162, 255);
+    border: 1px solid rgb(13, 162, 255);
+    width: 125px;
+    justify-content: space-between;
+    border-radius: 25px;
+}

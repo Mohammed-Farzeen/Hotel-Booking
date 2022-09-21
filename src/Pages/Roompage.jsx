@@ -3,7 +3,6 @@ import Navbar from '../Components/Navbar/Navbar';
 import Room from '../Components/Room/Room';
 import { Roomdata } from '../Components/Room/Roomdata';
 // import RoomPopup from '../Components/Popup/RoomPopup';
-import {AmenitiesData} from '../Components/Amenities/AmenitiesData'
 
 
 const Roompage = () => {
@@ -11,7 +10,7 @@ const Roompage = () => {
     <div>
         
         <Navbar/>
-        <Room data={Roomdata}  Amenities={AmenitiesData}/>
+        <Room data={Roomdata}/>
         {/* <RoomPopup/> */}
 
 
