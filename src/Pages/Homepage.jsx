@@ -15,8 +15,8 @@ const Homepage = () => {
     <Navbar/>
     <div className='background'></div>
     <div className='hbox'>
-    <Checkbox check={Checkin} data={checkindata} title='Check In Today' text='Checked In' bgclr='#008000' color='#008000' />
-    <Checkbox check={Checkout} data={checkoutdata} title='Check Out Today' text='Checked Out' bgclr='#800000' color='#FF0000' />
+    <Checkbox check={Checkin} data={checkindata} title='Check In Today' text='Check In' bgclr='#008000' color='#008000' />
+    <Checkbox check={Checkout} data={checkoutdata} title='Check Out Today' text='Check Out' bgclr='#800000' color='#FF0000' />
     </div>
     
 

@@ -7,6 +7,17 @@
     
     
 }
+.btn1,.available-btn-fn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.btn2{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 .new-booking-main{
     background-color: white;
     padding: 20px;
