@@ -77,6 +77,7 @@ const   NewBooking = () => {
           <div><Button text='Cancel' btnclr='white' color='orange' border='1px solid orange'/></div>
           </div> : ""
           }
+
           
           
         </div>

@@ -1,7 +1,11 @@
 import React from 'react'
 import Roomdetails from './Roomdetails'
 
-const Roomtable = ({data,setAddroom}) => {
+
+
+const Roomtable = ({roomData,setAddroom,setEditingId,setisEditing}) => {
+    
+
   return (
     <div>
         <div className='table'>
@@ -26,9 +30,10 @@ const Roomtable = ({data,setAddroom}) => {
             </div>
             {/* </div> */}
             <div  >
-                {data.map((data,index)=>{
+                {roomData.map((data,index
+                )=>{
                     return(
-                        <Roomdetails data={data} key={index} setAddroom={setAddroom} />
+                        <Roomdetails data={data} id={data.id} key={index} setAddroom={setAddroom} setEditingId={setEditingId} setisEditing={setisEditing} />
                     )
                 })} 
             </div>
