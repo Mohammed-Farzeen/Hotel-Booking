@@ -14,7 +14,8 @@ const Room = ({data}) => {
   const [addroom, setAddroom] = useState(false);
   const [roomData, setroomData] = useState([])
   const [EditingId, setEditingId] = useState(null)
-  const [isEditing, setisEditing] = useState(false)
+  const [DeleteingId, setDeleteingId] = useState(null)
+
 
   useEffect(() => {
    apiCall("/rooms")
@@ -22,9 +23,12 @@ const Room = ({data}) => {
    .then(response=>{
     setroomData(response);
    })
-  }, [addroom])
+  }, [addroom,DeleteingId])
   
-  
+  const deleteRoom = async()=>{
+    const res=await apiCall(`/rooms/${DeleteingId}`,"DELETE");
+    setDeleteingId(null)
+  }
 
   function popuproom() {
     console.log(setAddroom);
@@ -39,15 +43,30 @@ const Room = ({data}) => {
       <Button text='Add Room' btnclr='orange' color='white' Functionality={popuproom}/></div>
       
       <div className='Rmtble'>
-      <Roomtable roomData={roomData} setAddroom={setAddroom} setisEditing={setisEditing}/>
+      <Roomtable roomData={roomData} setEditingId={setEditingId} setAddroom={setAddroom} setDeleteingId={setDeleteingId}/>
       
-      <div className={addroom ? "popupwindow" : ""}>
+      <div className={addroom || DeleteingId ? "popupwindow" : ""}>
       
-      {addroom && <RoomPopup setAddroom={setAddroom} setEditingId={setEditingId} setisEditing={setisEditing} isEditing={isEditing} />}
+      {addroom && <RoomPopup roomData={roomData} EditingId={EditingId} setAddroom={setAddroom} setEditingId={setEditingId} />}
 
       </div>
       
       </div>
+
+      {DeleteingId &&
+      
+        <div className="delete-popup">
+
+          <div>Are you sure ? Want to delete</div>
+          <div className='delete-button'>
+            <Button text='Delete' btnclr='orange' color="white" Functionality={deleteRoom}/>
+            <Button text="Cancel" btnclr="white" color='orange' border="1px solid orange" Functionality={()=>{setDeleteingId(null)}} />
+          </div>
+
+        </div>
+     }
+
+      
 
         
 

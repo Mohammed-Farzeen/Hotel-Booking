@@ -3,7 +3,7 @@ import Roomdetails from './Roomdetails'
 
 
 
-const Roomtable = ({roomData,setAddroom,setEditingId,setisEditing}) => {
+const Roomtable = ({setEditingId,roomData,setAddroom,setDeleteingId}) => {
     
 
   return (
@@ -33,7 +33,7 @@ const Roomtable = ({roomData,setAddroom,setEditingId,setisEditing}) => {
                 {roomData.map((data,index
                 )=>{
                     return(
-                        <Roomdetails data={data} id={data.id} key={index} setAddroom={setAddroom} setEditingId={setEditingId} setisEditing={setisEditing} />
+                        <Roomdetails data={data} id={data.id} key={index} setAddroom={setAddroom} setEditingId={setEditingId} setDeleteingId={setDeleteingId}  />
                     )
                 })} 
             </div>
