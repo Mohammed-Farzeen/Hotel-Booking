@@ -1,0 +1,40 @@
+{
+  "rooms": [
+    {
+      "roomNumber": "101",
+      "adultCapacity": "2",
+      "childCapacity": "2",
+      "price": "2500",
+      "amenities": [
+        "Bed"
+      ],
+      "id": 1
+    },
+    {
+      "roomNumber": "102",
+      "adultCapacity": "2",
+      "childCapacity": "2",
+      "price": "2000",
+      "amenities": [
+        "TV"
+      ],
+      "id": 2
+    },
+    {
+      "roomNumber": "103",
+      "adultCapacity": "3",
+      "childCapacity": "2",
+      "price": "3500",
+      "amenities": [],
+      "id": 3
+    },
+    {
+      "roomNumber": "104",
+      "adultCapacity": "3",
+      "childCapacity": "3",
+      "price": "6000",
+      "amenities": [],
+      "id": 4
+    }
+  ]
+}
