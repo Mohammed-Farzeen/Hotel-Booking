@@ -4,13 +4,29 @@ import InputComponent from '../Popup/InputComponent'
 import Button from '../Button/Button'
 import BookingTable from './BookingTable'
 import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
+import apiCall from '../../Services/apiCall'
+import { useEffect } from 'react'
 
 
 
+ 
 
 
 
 const Booking = ({data}) => {
+
+  const [bookingData, setbookingData] = useState([])
+  
+  useEffect(() => {
+    apiCall("/booking")
+    .then(response=>{
+      setbookingData(response);
+    })
+  }, [bookingData])
+  
+
+
   return (
     <div>
     <div className='roommain'>
@@ -28,7 +44,7 @@ const Booking = ({data}) => {
 
         </div>
         <div className='booking-table'>
-        <BookingTable data={data}/>
+        <BookingTable bookingData={bookingData}/>
 
         </div>
          

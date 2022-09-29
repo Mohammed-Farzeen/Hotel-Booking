@@ -1,40 +1,31 @@
 {
-  "rooms": [
+  "booking": [
     {
-      "roomNumber": "101",
-      "adultCapacity": "2",
-      "childCapacity": "2",
-      "price": "2500",
-      "amenities": [
-        "Bed"
-      ],
+      "guestFirstName": "abc",
+      "guestLastName": "xyz",
+      "checkInDate": "2022-09-03",
+      "checkOutDate": "2022-09-08",
+      "numberOfAdults": "2",
+      "numberOfChildren": "2",
       "id": 1
     },
     {
-      "roomNumber": "102",
-      "adultCapacity": "2",
-      "childCapacity": "2",
-      "price": "2000",
-      "amenities": [
-        "TV"
-      ],
+      "guestFirstName": "farzy",
+      "guestLastName": "z",
+      "checkInDate": "2022-09-05",
+      "checkOutDate": "2022-09-07",
+      "numberOfAdults": "1",
+      "numberOfChildren": "1",
       "id": 2
     },
     {
-      "roomNumber": "103",
-      "adultCapacity": "3",
-      "childCapacity": "2",
-      "price": "3500",
-      "amenities": [],
+      "guestFirstName": "aaaa",
+      "guestLastName": "bbb",
+      "checkInDate": "2022-09-09",
+      "checkOutDate": "2022-09-10",
+      "numberOfAdults": "2",
+      "numberOfChildren": "1",
       "id": 3
-    },
-    {
-      "roomNumber": "104",
-      "adultCapacity": "3",
-      "childCapacity": "3",
-      "price": "6000",
-      "amenities": [],
-      "id": 4
     }
   ]
 }

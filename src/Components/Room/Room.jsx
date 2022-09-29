@@ -9,7 +9,7 @@ import apiCall from '../../Services/apiCall';
 
 
 
-const Room = ({data}) => {
+const Room = ({}) => {
 
   const [addroom, setAddroom] = useState(false);
   const [roomData, setroomData] = useState([])

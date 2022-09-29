@@ -11,7 +11,7 @@ import './Popup.css'
   
 const RoomPopup = ({roomData,setEditingId,EditingId,setAddroom}) => {
 
-  
+   
 
     const [formData, setFormData] = useState({
       roomNumber:"",
@@ -60,8 +60,8 @@ const RoomPopup = ({roomData,setEditingId,EditingId,setAddroom}) => {
         setEditingId(null)
       }
       const addAmenities=(value)=>{
-        if(value && !amenities.includes(value))
-        onChange([...amenities,value],"amenities")
+        if(value && !amenities.map(a=>a.text).includes(value))
+        onChange([...amenities,{text:value}],"amenities")
       }
 
     
@@ -109,7 +109,7 @@ const RoomPopup = ({roomData,setEditingId,EditingId,setAddroom}) => {
             <div className='select-data'>
               {amenities.map((data, index) => {
                 return (
-                  <Amenities select={amenities} data={data} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} />
+                  <Amenities select={amenities} data={data.text} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} />
               )})}
             </div>
         

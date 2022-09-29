@@ -1,7 +1,7 @@
 import React from 'react'
 import BookingTableBox from './BookingTableBox'
 
-const Booking_table = ({data}) => {
+const Booking_table = ({bookingData}) => {
   return (
     <div className='booking-table-main'>
         <div className='booking-table-top'>
@@ -15,7 +15,7 @@ const Booking_table = ({data}) => {
 
         <div className='booking-table-data'>
 
-          {data.map((data,index)=>{
+          {bookingData.map((data,index)=>{
              return(
               <BookingTableBox data={data} key={index}/>
               
