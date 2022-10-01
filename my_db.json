@@ -26,6 +26,16 @@
       "numberOfAdults": "2",
       "numberOfChildren": "1",
       "id": 3
+    },
+    {
+      "guestFirstName": "eva",
+      "guestLastName": "m",
+      "checkInDate": "2022-09-29",
+      "checkOutDate": "2022-10-07",
+      "numberOfAdults": "1",
+      "numberOfChildren": "4",
+      "id": 4
     }
   ]
+  
 }

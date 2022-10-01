@@ -7,6 +7,28 @@
     
     
 }
+.room-number{
+    display: flex;
+    gap: 10px;
+    
+}
+.room-price-line {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: baseline;
+}
+.room-number{
+    font-weight: bold;
+}
+.room-no{
+    font-size: 20px;
+}
+.room-price{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .btn1,.available-btn-fn{
     display: flex;
     flex-wrap: wrap;

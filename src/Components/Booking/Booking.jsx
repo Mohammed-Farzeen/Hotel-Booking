@@ -23,7 +23,7 @@ const Booking = ({data}) => {
     .then(response=>{
       setbookingData(response);
     })
-  }, [bookingData])
+  }, [])
   
 
 
