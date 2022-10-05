@@ -3,6 +3,9 @@ import CheckComponent from './CheckComponent';
 import './Check.css'
 
 const Checkbox = ({check,data,title,text,bgclr,color}) => {
+  
+  
+
   return (
     <div className='mainbox'>
         <div className='title'>
@@ -12,7 +15,7 @@ const Checkbox = ({check,data,title,text,bgclr,color}) => {
         <div className='scroll'>
         {data.map((data,index)=>{
             return(
-                <CheckComponent data={data} key={index} text={text} bgclr={bgclr} color={color}/>
+                <CheckComponent data={data} key={index} text={text} bgclr={bgclr} color={color} />
                 
 
             )

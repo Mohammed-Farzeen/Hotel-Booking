@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import Button from '../Button/Button'
 import InputComponent from '../Popup/InputComponent'
 import '../Booking/Booking.css'
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import apiCall from '../../Services/apiCall'
+import { updateStatus } from '../../Services/api'
+import { useEffect } from 'react'
 
 
 
 const   NewBooking = () => {
+
+  const{id} = useParams();
+  const [status, setStatus] = useState()
 
   const [NewBookingData, setNewBookingData] = useState({
     guestFirstName:"",
@@ -16,8 +21,28 @@ const   NewBooking = () => {
     checkOutDate:"",
     numberOfAdults:"",
     numberOfChild:""
-    
   });
+
+    useEffect(()=>{
+      if(!id) return;
+      getBookingData();
+    },[id]);
+
+    const getBookingData = async()=>{
+      const data = await apiCall(`/booking/${id}`);
+      if(data){
+        setNewBookingData({
+          ...data,
+          checkInDate: data.checkInDate.split("T")[0],
+          checkOutDate: data.checkInDate.split("T")[0]
+        })
+        setRoom(data.room);
+        setStatus(data.status)
+        setBooking(data)
+      }
+      console.log(data);
+    }
+
 
   const [room, setRoom] = useState(null)
   const [Roomlist, setRoomlist] = useState(false)
@@ -40,6 +65,7 @@ const   NewBooking = () => {
     const  getAvailableRoom= async()=>{
       console.log(NewBookingData.checkInDate);
       let room = await getRooms();
+
       if(room.id){
         setRoom(room);
         setGetAvailableroom(true)
@@ -51,7 +77,13 @@ const   NewBooking = () => {
       const booking= await addBooking();
       console.log(booking);
       setBooking(booking);
+      setStatus("Booked")
       setBooknow(true);
+    }
+
+    const changeStatus = async(status)=>{
+      await updateStatus(Booking.id,status);
+      setStatus(status)
     }
 
     
@@ -65,7 +97,7 @@ const   NewBooking = () => {
 
     const addBooking = ()=>apiCall("/booking","POST",{...formatBooking(),roomId:room.id,status:"Booked"})
     const getRooms = ()=>apiCall("/get-rooms","POST",formatBooking())
-    const updateStatus=(status)=>apiCall("/booking","PUT",{id:Booking.id,status})
+    // const updateStatus=(status)=>apiCall("/booking","PUT",{id:Booking.id,status})
     
 
   return (
@@ -73,6 +105,7 @@ const   NewBooking = () => {
       <div className='new-booking-main'>
         <div className='new-booking-text'> 
         <h1>New Booking {guestFirstName+" "+guestLastName}</h1>
+        <div className='booking-status'><h2>{status}</h2></div>
 
         </div>
         {/* <form action='' onSubmit={BookingData}> */}
@@ -84,7 +117,7 @@ const   NewBooking = () => {
           <InputComponent text='Number of Adults'type='number' value={numberOfAdults} setState={(value)=>onChange(value,"numberOfAdults")}/>
           <InputComponent text='Number of Children'type='Number' value={numberOfChild} setState={(value)=>onChange(value,"numberOfChild")} />
           
-          {Roomlist &&
+          {room &&
           <div className='room-list'>
             <div>
               <div className="room-number">Room <div className='room-no'>{room.roomNumber}</div></div>
@@ -92,6 +125,7 @@ const   NewBooking = () => {
             <div>
               <div className='room-price-line'>at <div className="room-price">{room.price}</div> per night.</div>
             </div>
+            
           </div>
           }
 
@@ -99,7 +133,7 @@ const   NewBooking = () => {
           <div className="buttons">
           <div className='btn1'>
       
-            <Button className='booking-button' text='Get Available Rooms' btnclr='orange' color='white' Functionality={getAvailableRoom}/>
+            <Button className='booking-button' text='Get Available Rooms' btnclr='orange' color='white' Functionality={getAvailableRoom} disabled={room}/>
 
             {GetAvailableroom ? 
             <div className='available-btn-fn'>
@@ -112,21 +146,21 @@ const   NewBooking = () => {
             </div> 
             </div> : ""}
           </div>
-          {Booknow ? 
+          {room ? 
           <div className='btn2'>
-          <div><Button text='Check In' btnclr='white' color='orange' border='1px solid orange' 
-          Functionality={()=>{
-            updateStatus("Check In")
+          <div><Button className=" " text='Check In' btnclr='white' color='orange' border='1px solid orange' disabled={status !== "Booked"}
+            Functionality={()=>{
+              changeStatus("Check In")
           }}
           /></div>
-          <div><Button text='Check Out' btnclr='white' color='orange' border='1px solid orange'
-          Functionality={()=>{
-            updateStatus("Check Out")
+          <div><Button className=" " text='Check Out' btnclr='white' color='orange' border='1px solid orange' disabled={status !== "Check In"}
+            Functionality={()=>{
+              changeStatus("Check Out")
           }}
           /></div>
-          <div><Button text='Cancel' btnclr='white' color='orange' border='1px solid orange'
-          Functionality={()=>{
-            updateStatus("Cancelled")
+          <div><Button className=" " text='Cancel' btnclr='white' color='orange' border='1px solid orange' disabled={status !== "Booked"}
+            Functionality={()=>{
+              changeStatus("Cancelled")
           }}
           /></div>
           </div> : ""

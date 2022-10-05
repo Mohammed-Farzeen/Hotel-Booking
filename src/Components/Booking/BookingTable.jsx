@@ -5,11 +5,11 @@ const Booking_table = ({bookingData}) => {
   return (
     <div className='booking-table-main'>
         <div className='booking-table-top'>
-        <div>Guest Last Name</div>
         <div>Guest First Name</div>
+        <div>Guest Last Name</div>
         <div>Room Number</div>
-        <div>Check In Data</div>
-        <div>Check Out Data</div>
+        <div>Check In Date</div>
+        <div>Check Out Date</div>
         <div>Status</div>
         </div>
 

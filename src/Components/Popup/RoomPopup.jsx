@@ -80,20 +80,15 @@ const RoomPopup = ({roomData,setEditingId,EditingId,setAddroom}) => {
       <InputComponent text='Adult Capacity' type ="number" value={adultCapacity}  setState={(value)=>onChange(value,"adultCapacity")} />
       <InputComponent text='Children Capacity' type ="number" value={childCapacity}  setState={(value)=>onChange(value,"childCapacity")} />
       <InputComponent text='Price' type ="number" value={price}  setState={(value)=>onChange(value,"price")} />
-      <div className='form-bottom'>
-        <Button text='Save' btnclr='#0da2ff' color='white' />
-       
-      </div>
 
-      
       </form> 
 
-      {EditingId ? <div>
+      {EditingId ? 
+        <div>
       
-      <div><h2>Amenities</h2></div>
+          <div><h2>Amenities</h2></div>
 
-      
-      <div>
+          <div>
             <select className='select-option' onChange={(e)=>{addAmenities(e.target.value)}}>
               <option value="">Select Item</option>
               <option value="TV">TV</option>
@@ -106,16 +101,19 @@ const RoomPopup = ({roomData,setEditingId,EditingId,setAddroom}) => {
             </select>
 
             <div>
-            <div className='select-data'>
-              {amenities.map((data, index) => {
-                return (
-                  <Amenities select={amenities} data={data.text} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} />
-              )})}
-            </div>
-        
+              <div className='select-data'>
+                {amenities.map((data, index) => {
+                 return (
+                   <Amenities select={amenities} data={data.text} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} />
+                )})}
+              </div>
             </div> 
-        </div>
+          </div>
         </div> : ""}
+        <div className='form-bottom'>
+          <Button text='Save' btnclr='#0da2ff' color='white' Functionality={sendData}/>
+       
+        </div>
 
       
       </div>

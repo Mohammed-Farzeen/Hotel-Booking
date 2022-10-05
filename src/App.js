@@ -16,6 +16,7 @@ function App() {
         <Route path='/room' element={<Roompage/>} />
         <Route path='/booking' element={<Booking/>} />
         <Route path='/newbooking' element={<NewBookingPage/>} />
+        <Route path='/booking/:id' element={<NewBookingPage/>} />
 
       </Routes>
       </BrowserRouter>
